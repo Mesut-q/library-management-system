@@ -3,7 +3,7 @@
 Database Project
 This repository contains a Node.js application designed to interact with a MySQL database. The project provides RESTful APIs for performing CRUD operations and features a modular structure for easy maintenance and scalability.
 
-          Project Structure
+Project Structure
 app.js: The main application file. Initializes the Express server and loads necessary middleware.
 routes/: Contains files that define API endpoints. Each route directs to the corresponding controller.
 index.js: The main route file. Includes other route files and directs them to base URLs.
@@ -16,7 +16,7 @@ database.js: Contains database connection settings.
    
    
    
-       Technologies Used
+Technologies Used
 Node.js: JavaScript runtime environment. Used for running server-side code.
 Express: Web application framework for Node.js. Used for creating RESTful APIs.
 MySQL: Relational database management system. Used for storing and managing data.
@@ -35,7 +35,7 @@ Open the config/database.js file and enter your MySQL database credentials.
 
 
 
-      API Endpoints
+API Endpoints
 GET /users: Retrieves all users.
 GET /users/:id: Retrieves a specific user by ID.
 POST /users: Creates a new user.
