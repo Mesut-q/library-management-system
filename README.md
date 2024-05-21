@@ -26,10 +26,10 @@ Sequelize: ORM (Object-Relational Mapping) tool for Node.js. Simplifies database
           git clone https://github.com/yourusername/databaseproject.git
 cd databaseproject
 
-Install dependencies:
+          Install dependencies:
 npm install
 
-Configure the database:
+          Configure the database:
 Open the config/database.js file and enter your MySQL database credentials.
 
 
