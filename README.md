@@ -22,16 +22,16 @@ Express: Web application framework for Node.js. Used for creating RESTful APIs.
 MySQL: Relational database management system. Used for storing and managing data.
 Sequelize: ORM (Object-Relational Mapping) tool for Node.js. Simplifies database operations.
 
-Clone the repository:
-          git clone https://github.com/yourusername/databaseproject.git  
-           cd databaseproject
+            Clone the repository: git clone https://github.com/yourusername/databaseproject.git      cd databaseproject
+         
+         
        
-Install dependencies:
-         npm install
+         Install dependencies: npm install
 
-Configure the database:
-         Open the config/database.js file and enter your MySQL database credentials.
+        
+         Configure the database: Open the config/database.js file and enter your MySQL database credentials.
 
+        
 
 
 
