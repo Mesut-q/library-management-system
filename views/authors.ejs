@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        .logout-button {
+            padding: 10px 20px; /* Düğme boyutunu küçült */
+            font-size: 20px; /* Yazı tipi boyutunu büyüt */
+            background-color: black; /* Arka plan rengi */
+            color: white; /* Yazı rengi */
+            border: none; /* Kenarlık kaldır */
+            cursor: pointer; /* İmleç stilini düğme gibi yap */
+            position: fixed; /* Pozisyon türü */
+            top: 650px; /* Üstten mesafe, sayfanın üstüne daha yakın */
+            left: 0px; /* Soldan mesafe, sayfanın sol tarafına yakın */
+            border-radius: 50px;
+            width: 130px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Authors</h1>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                  
+                    <th scope="col">Author Id</th>
+                    <th scope="col">Author Name</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <% authors.forEach(function(authors) { %>
+                    <tr>
+                        <td><%= authors.Author_id %></td>
+                        <td><%= authors.Aname %></td>
+                   
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <form action="/logout" method="post">
+        <button class="logout-button" type="submit">Logout</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

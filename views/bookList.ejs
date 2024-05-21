@@ -1,0 +1,118 @@
+
+
+
+<style>
+    .logout-button {
+            padding: 10px 20px; /* Düğme boyutunu küçült */
+            font-size: 20px; /* Yazı tipi boyutunu büyüt */
+            background-color: black; /* Arka plan rengi */
+            color: white; /* Yazı rengi */
+            border: none; /* Kenarlık kaldır */
+            cursor: pointer; /* İmleç stilini düğme gibi yap */
+            position: fixed; /* Pozisyon türü */
+            top: 680px; /* Üstten mesafe, sayfanın üstüne daha yakın */
+            left: 0px; /* Soldan mesafe, sayfanın sol tarafına yakın */
+            border-radius: 50px;
+            width: 100px;
+            text-align: center;
+        }
+
+    body {
+        margin: 50;
+        font-family: Arial, sans-serif; /* Tüm sayfa için varsayılan yazı tipi */
+    }
+    h1 {
+        font-family: 'Georgia', serif; /* Yazı tipini değiştir */
+        font-weight: bold; /* Yazıyı kalın yapar */
+        text-align: center; /* Başlığı ortalar */
+        margin-top: 20px; /* Üstten boşluk ekler */
+    }
+
+    table {
+        width: 100%;    
+        border-collapse: collapse;
+    }
+    th {
+        background-color: #9fc9a9; /* Arka plan rengi */
+        color: #333; /* Yazı rengi */
+        font-weight: bold; /* Yazı tipini kalın yapar */
+        border-bottom: 2px solid #000; /* Alt çizgiyi ekler */
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+
+
+<div class="container mt-5">
+    <h1>Book List</h1>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">ISBN</th>
+                <th scope="col">Title</th>
+                <th scope="col">Publication Date</th>
+                <th scope="col"> </th>
+                <th scope="col"> </th>
+                <th scope="col">Author ID  </th>
+                <th scope="col">   </th>
+                <th scope="col">Genre ID</th>
+                <th scope="col">Reservation Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <a href="/homepage" class="btn btn-danger" style="margin-bottom: 20px;">Go Back</a>
+            
+            
+            <% bookList.forEach(book => { %>
+            <tr>
+                <td><%= book.ISBN %></td>
+                <td><%= book.Title %></td>
+                <td><%= book.Publication_date %></td>
+                <td><%=    %></td>
+                <td><%= %></td>
+                <td><%= book.AuthorName %></td>
+                <td></td>
+                <td><%= book.GenreName %></td>
+                
+                <td>
+                    <% if (reserved_books_list.includes(book.ISBN)) { %>
+                        <%= book.ReservationStatus %>
+                        <% } else { %>
+                         Available
+                    <% } %>
+                </td>
+                <td>
+                    <% if (book.ReservationStatus=="Borrowed" || book.ReservationStatus=="Reserved") { %>
+                            This book <%= book.ReservationStatus %>
+                    <% } else { %>
+                        <% if (reserved_books_list.includes(book.ISBN)) { %>
+                            <form action="/homepage/bookList" method="post">
+                                <input type="hidden" name="isbn" value="<%= book.ISBN %>">
+                                <input type="date" name="reservation_date" id="">
+                                <button type="submit" class="btn btn-primary">Reserve</button>
+                            </form>
+                            <% } else { %>
+                                <form action="/add-reservation" method="post">
+                                    <input type="hidden" name="isbn" value="<%= book.ISBN %>">
+                                    <input type="date" name="reservation_date" id="">
+                                    <button type="submit" class="btn btn-primary">Reserve</button>
+                                </form>
+                        <% } %>
+
+                        
+                   
+                   
+                   
+                   
+                        <% } %> %>
+                   
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <form action="/logout" method="post">
+        <button class="logout-button" type="submit">Logout</button>
+    </form>
+</div>

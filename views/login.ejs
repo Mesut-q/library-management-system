@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/login.css">
+    
+    <style>
+        .btn-custom {
+            background-color: #ff0000; /* Kırmızı arka plan */
+            color: white; /* Beyaz yazı */
+            padding: 10px 20px; /* Buton boyutunu ayarlar */
+            text-align: center; /* Metni ortalar */
+            text-decoration: none; /* Altı çizili bağlantı stilini kaldırır */
+            display: inline-block; /* Buton gibi hizalanmasını sağlar */
+            font-size: 16px; /* Yazı boyutunu belirler */
+            border: none; /* Çerçeve kaldırılır */
+            border-radius: 5px; /* Kenarları yuvarlak yapar */
+            cursor: pointer; /* İmleç, üzerine gelindiğinde buton gibi değişir */
+            margin-top: 1rem; /* Üstten boşluk ekler (mt-3 yerine geçer) */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="username">Member Name:</label>
+                <input type="text" id="username" name="memname" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Mem id:</label>
+                <input type="password" id="password" name="memid" required class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <a href="/register" class=" btn-custom">Register</a>
+    </div>
+</body>
+</html>
